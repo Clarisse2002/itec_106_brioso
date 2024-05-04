@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Paper Scissors Game</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<center>
+<body>
+<div class="container">
+<h1>Rock - Paper - Scissor</h1>
+<div class="choices">
+<button onclick="playGame('rock')"><img
+src="C:\Users\CLARISSE\Desktop\RPS\rock.png"
+width="80"></button></button>
+<button onclick="playGame('paper')"><img
+src="C:\Users\CLARISSE\Desktop\RPS\paper.png"
+width="80"></button>
+<button onclick="playGame('scissors')"><img
+src="C:\Users\CLARISSE\Desktop\RPS\scissor.png"
+width="80"></button>
+</div>
+<p id="result"></p>
+<div id="choices">
+<p>PLAYER: <span id="playerChoice"></span></p>
+<p>COMPUTER: <span id="computerChoice"></span></p>
+</div>
+</div>
+<script>
+function playGame(playerChoice) {
+const choices = ['rock', 'paper', 'scissors'];
+const computerChoice = choices[Math.floor(Math.random() * 
+choices.length)];
+document.getElementById('playerChoice').textContent = playerChoice;
+document.getElementById('computerChoice').textContent = 
+computerChoice;
+let resultMessage = '';
+if (playerChoice === computerChoice) {
+result.style.fontSize = '2rem';
+resultMessage = "IT'S A TIE!";
+} else if (
+(playerChoice === 'rock' && computerChoice === 'scissors') ||
+(playerChoice === 'paper' && computerChoice === 'rock') ||
+(playerChoice === 'scissors' && computerChoice === 'paper')
+) {
+result.style.fontSize = '2rem';
+result.style.color = '#308D46';
+resultMessage = 'YOU WIN!';
+} else {
+result.style.fontSize = '2rem';
+result.style.color = 'red';
+resultMessage = 'YOU LOSE!';
+}
+document.getElementById('result').textContent = resultMessage;
+}
+</script>
+</body>
+</center>
+</html
